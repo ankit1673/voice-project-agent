@@ -2,6 +2,7 @@
   "name": "voice-agent-scaffold",
   "private": true,
   "scripts": {
+    "postinstall": "npm --prefix backend ci --omit=dev",
     "cleanup": "node scripts/cleanup-ports.js",
     "dev": "npm run cleanup && concurrently \"npm --prefix backend run dev\" \"npm --prefix frontend run dev -- --host 0.0.0.0\"",
     "backend": "npm run cleanup && npm --prefix backend run dev",
