@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 // Voice-driven project agent: mic -> transcript -> LLM intent extraction -> confirm -> execute
 // Uses browser-native Web Speech API — zero extra STT setup, works in Chrome/Edge.
 
-const BACKEND_URL = "http://localhost:5000"; // change to deployed backend URL
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL?.trim() || "http://localhost:5000";
 
 export default function VoiceAgent() {
   const [listening, setListening] = useState(false);
